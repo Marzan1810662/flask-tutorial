@@ -3,4 +3,13 @@
 
 {%block content%}
 <p>This is other html</p>
+<p>{{value}}</p>
+<p>{{value| upper}}</p>
+<p>{{value|lower}}</p>
+<p>{{value|replace('l', 'L')}}</p>
+<!-- using my own definied filter -->
+<p>{{value|reverse_string}}</p>
+<p>{{value|repeat}}</p>
+<p>{{value|repeat(5)}}</p>
+<p>{{value|alternate_case}}</p>
 {% endblock%}

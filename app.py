@@ -11,7 +11,21 @@ def index():
 
 @app.route('/other')
 def other():
-    return render_template('other.html')
+    value = 'Hello World!'
+    return render_template('other.html',value = value)
+
+# creating our own template filter
+@app.template_filter('reverse_string')
+def reverse(s):
+    return s[::-1]
+
+@app.template_filter('repeat')
+def repeat(s, times= 2):
+    return s * times
+
+@app.template_filter('alternate_case')
+def alternate_case(s):
+    return ''.join([c.upper() if i % 2 == 0 else c.lower() for i,c in enumerate(s)])
 
 # @app.route('/')
 # def index():
