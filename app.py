@@ -35,6 +35,17 @@ def redirect_endpoint():
 # def index():
 #     return "<h1>Hello World</h1>"
 
+@app.route('/index2', methods = ['GET', 'POST'])
+def index2():
+    if request.method == 'GET':
+        return render_template('login.html')
+    elif request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if username == 'marzan' and password == 'abc':
+            return 'success'
+        else: return 'failure'
+
 
 @app.route('/hello', methods = ['GET', 'POST'])
 def hello():
