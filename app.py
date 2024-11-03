@@ -1,10 +1,17 @@
-from flask import Flask, request,make_response
+from flask import Flask, request,make_response,render_template
 
-app =Flask(__name__)
+app =Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index():
-    return "<h1>Hello World</h1>"
+    myValue = 'Marzan'
+    myResult = 10 + 20
+    myList = [10,20,30,40,50]
+    return render_template('index.html', myValue = myValue, myResult = myResult, myList = myList)
+
+# @app.route('/')
+# def index():
+#     return "<h1>Hello World</h1>"
 
 
 @app.route('/hello', methods = ['GET', 'POST'])
