@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %} index page {% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask App</title>
-</head>
-
-<body>
+{%block content%}
     <h1>Flask App template</h1>
     <p>{{myValue}}</p>
     <p>{{myResult}}</p>
@@ -22,6 +16,4 @@
             {% endif %}
         {% endfor %}
     </ul>
-</body>
-
-</html>
+{% endblock %}

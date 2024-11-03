@@ -9,6 +9,10 @@ def index():
     myList = [10,20,30,40,50]
     return render_template('index.html', myValue = myValue, myResult = myResult, myList = myList)
 
+@app.route('/other')
+def other():
+    return render_template('other.html')
+
 # @app.route('/')
 # def index():
 #     return "<h1>Hello World</h1>"
